@@ -1,0 +1,40 @@
+{
+    "title": "My Awesome Dataset", 
+    "subtitle": "My awesomer subtitle",
+    "description": "My awesomest description",
+    "id": "username/my-awesome-dataset", 
+    "licenses": [{"name": "CC0-1.0"}],
+    "resources": [
+      {
+        "path": "my-awesome-data.csv",
+        "description": "This is my awesome data!",
+        "schema": {
+          "fields": [
+            {
+              "name": "StringField",
+              "description": "String field description",
+              "type": "string"
+            },
+            {
+              "name": "NumberField",
+              "description": "Number field description",
+              "type": "number"
+            },
+            {
+              "name": "DateTimeField",
+              "description": "Date time field description",
+              "type": "datetime"
+            }
+          ]
+        }
+      },
+      {
+        "path": "my-awesome-extra-file.txt",
+        "description": "This is my awesome extra file!"
+      }
+    ],
+    "keywords": [
+      "beginner",
+      "tutorial"
+    ]
+  }
