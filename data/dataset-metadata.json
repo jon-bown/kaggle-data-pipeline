@@ -1,13 +1,13 @@
 {
-    "title": "My Awesome Dataset", 
-    "subtitle": "My awesomer subtitle",
-    "description": "My awesomest description",
-    "id": "username/my-awesome-dataset", 
+    "title": "Dataset title", 
+    "subtitle": "Dataset subtitle",
+    "description": "use data_card.md",
+    "id": "username/dataset-title", 
     "licenses": [{"name": "CC0-1.0"}],
     "resources": [
       {
-        "path": "my-awesome-data.csv",
-        "description": "This is my awesome data!",
+        "path": "my-data.csv",
+        "description": "This is my data!",
         "schema": {
           "fields": [
             {
@@ -29,8 +29,8 @@
         }
       },
       {
-        "path": "my-awesome-extra-file.txt",
-        "description": "This is my awesome extra file!"
+        "path": "my-extra-data.txt",
+        "description": "This is my extra file!"
       }
     ],
     "keywords": [

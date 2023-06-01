@@ -1,0 +1,37 @@
+name: Action name
+#on:
+#  schedule:
+    # Run at 00:00 UTC on the first day of every month
+#    - cron:  '0 0 1 * *'
+
+jobs:
+  update_plot:
+    name: Run generator.py
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          cache: 'pip'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run Script and Update data
+        run: python generator.py
+        # Necessary secrets for environment
+        env:
+          #List any repository secrets. Kaggle secrets required.
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      - name: Commit and push if there were changes
+        if: steps.changes.outputs.changed == 'true'
+        #commit if changes, but ignore any actions 'on push' afterward
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update data"
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

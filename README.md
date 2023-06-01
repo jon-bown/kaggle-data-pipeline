@@ -34,10 +34,11 @@ By doing this, you ensure that your Kaggle credentials are kept secure and are n
 
 Once you have set up your Kaggle API credentials, you can start using the data pipeline. 
 
-- 'data' folder: Whatever datasets you generate should be placed within the data folder and should be referenced directly by the dataset-metadata.json file. For more info on structuring the metadata file, see the [Metadata Wiki]()
-- 'utils' folder: Convenient place to put helper functions for your pipeline. There is an example for updating the data card in the metadata file. 
-- requirements.txt
-- generator.py
+- `data` folder: Whatever datasets you generate should be placed within the data folder and should be referenced directly by the dataset-metadata.json file. For more info on structuring the metadata file, see the [Metadata Wiki](https://github.com/Kaggle/kaggle-api/wiki/Dataset-Metadata). The data_card.md can be updated to be included in your metadata file `description` key.
+- `utils` folder: Convenient place to put helper functions for your pipeline. There is an example for updating the data card in the metadata file. 
+- `requirements.txt`: Add names of all python packages used. Lock versions if applicable.
+- `generator.py`: Build your data generator. Basic code is included to update a kaggle data version.
+- `actions` folder: Contains an example of a github action that will run the `generator.py` script on the first day of every month. This template will not do anything by itself, it must be developed within a github action by navigating to the 'Actions' tab and creating a new workflow.
 
 ## Contact
 
