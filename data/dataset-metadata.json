@@ -3,7 +3,7 @@
     "subtitle": "Dataset subtitle",
     "description": "use data_card.md",
     "id": "username/dataset-title", 
-    "licenses": [{"name": "CC0-1.0"}],
+    "licenses": [{"name": "unknown"}],
     "resources": [
       {
         "path": "my-data.csv",

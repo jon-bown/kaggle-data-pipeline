@@ -41,6 +41,31 @@ Once you have set up your Kaggle API credentials, you can start using the data p
 - `generator.py`: Build your data generator. Basic code is included to update a kaggle data version.
 - `actions` folder: Contains an example of a github action that will run the `generator.py` script on the first day of every month. This template will not do anything by itself, it must be developed within a github action by navigating to the 'Actions' tab and creating a new workflow.
 
+## Helpful Kaggle API Calls
+
+```python
+#Create new dataset version
+api = KaggleApi()
+api.authenticate()
+api.dataset_create_version(
+    "./data/",
+    version_notes=f"Updated on {datetime.datetime.now().strftime('%Y-%m-%d')}",
+    )
+
+```
+
+
+```python
+# Create new dataset
+api = KaggleApi()
+api.authenticate()
+api.dataset_create_new("./data/",
+                    public=False,
+                    quiet=False,
+                    convert_to_csv=True,
+                    dir_mode='skip')
+```
+
 ## Contact
 
 For any questions or concerns, please open an issue on this repository.
